@@ -1,0 +1,5 @@
+#!/bin/bash
+export JAVA_HOME=/usr/local/jdk1.8.0_65
+export ANDROID_HOME=/usr/local/android-sdk-linux
+export ANDROID_EMULATOR_FORCE_32BIT=true
+export PATH=/usr/local/jre1.8.0_45/bin:/usr/local/sbin:/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/opt/blender:/usr/lib/kde4/libexec:/usr/lib/qt/bin:/usr/share/texmf/bin:.:/home/daniel/sos/node_modules/cordova/bin:/home/daniel/sos/node_modules/ionic/bin/
