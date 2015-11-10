@@ -1,12 +1,16 @@
-<ion-view view-title="Abrigos">
+<ion-view view-title="ABRIGOS">
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="address in addresses" type="item-text-wrap" href="#/tab/chats/{{ address.place_id }}">
         <img ng-src="">
-        <h2>{{ address.address }}</h2>
-        <p>    
-	  {{ address.location.lat }}
-	  {{ address.location.lng }}</p>
+        <h2>{{address.abrigo}}</h2>
+        <p>   
+	    {{ address.address }}	  
+	    <small>
+	      <b>( {{ address.location.lat }} ,<b/>
+	    {{ address.location.lng }} )
+	    </small>
+	</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="">
