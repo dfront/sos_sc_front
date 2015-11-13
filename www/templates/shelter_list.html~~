@@ -4,7 +4,10 @@
       <ion-item>
 	<h2>{{ page_title }}</h2>
 	<p>
-	  {{ address.locality.long_name }} -  {{ address.country.short_name }}
+	    {{ shhelter.address.address }}	  
+	    <small>
+	      <b>{{ shelter.address.location.lat }} , {{ address.location.lng }})<b/>
+	    </small>
 	</p>
 	<i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>

@@ -2,8 +2,9 @@ angular.module('starter.controllers', [])
 
 
 .controller('ShelterCtrl', function($scope,$http) {
-
     $scope.addresses = [];
+    $scope.page_title="Regiões em emergência"
+    $scope.page_descrition="selecione o Estado"
     var address; 
 
     $http
@@ -14,11 +15,8 @@ angular.module('starter.controllers', [])
 		var response;
 		for (var i in res){
 		    address = {"place_id":0,"address":"","location":{"lat":0,lng:0}}
-		    response = res[i];		   	 
-		    address.address  = response.formatted_address;
-		    address.location = response.geometry.location; 
-		    address.place_id = response.place_id; 
-		    address.abrigo=response.abrigo;
+		    response = res[i];
+		    address = response		    
 		    $scope.addresses.push(address);
 		}	    
 	    }, 

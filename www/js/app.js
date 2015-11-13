@@ -31,11 +31,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: 'templates/tabs.html'
   })
 
-  .state('tab.shelter', {
-    url: '/shelter',
+  .state('tab.shelters', {
+    url: '/shelters',
     views: {
       'tab-shelter': {
-        templateUrl: 'templates/shelter.html',
+        templateUrl: 'templates/shelters.html',
         controller: 'ShelterCtrl'
       }
     }
@@ -60,6 +60,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     });
   
-  $urlRouterProvider.otherwise('/shelter');
+  $urlRouterProvider.otherwise('/tab/shelters');
 
 });

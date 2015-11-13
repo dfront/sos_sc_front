@@ -1,0 +1,30 @@
+<ion-view>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+	<h2><b>{{ page_title }}</b></h2>
+	<p>
+	  {{ page_description }}
+	</p>
+	<div class="list card" ng-repeat="address in addresses">	
+	 
+	    <div class="" ng-repeat="address_component in address.address_components">
+
+
+	      <div ng-if="address_component.types.indexOf('administrative_area_level_1') === 1 ">
+ 		<b>{{ address_component.long_name }}</b>
+	      </div>
+	    </div>
+	    
+	      
+	</div>
+	    
+
+ -  {{ address.country.short_name }}
+	  </p>
+	</div>
+	<i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
