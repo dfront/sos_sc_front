@@ -30,7 +30,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
-
   .state('tab.shelter', {
     url: '/shelter',
     views: {
@@ -42,10 +41,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
   .state('tab.shelters-list', {
       cache: false,
-      url: '/shelters/list/:countryShortName',
+      url: '/shelters/list/:placeId',
       views: {
         'tab-shelter': {
-          templateUrl: 'templates/shelter_list.html',
+          templateUrl: 'templates/shelter-list.html',
           controller: 'ShelterListCtrl'
         }
       }
@@ -54,7 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/shelter/:placeId',
       views: {
         'tab-shelter': {
-          templateUrl: 'templates/shelter_detail.html',
+          templateUrl: 'templates/shelter-detail.html',
           controller: 'ShelterDetailCtrl'
         }
       }

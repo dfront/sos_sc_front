@@ -30,7 +30,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
-
   .state('tab.shelter', {
     url: '/shelter',
     views: {
@@ -42,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
   .state('tab.shelters-list', {
       cache: false,
-      url: '/shelters/list/:countryShortName',
+      url: '/shelters/list/:placeId',
       views: {
         'tab-shelter': {
           templateUrl: 'templates/shelter_list.html',

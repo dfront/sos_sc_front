@@ -7,7 +7,7 @@
         <p>   
 	    {{ address.address }}	  
 	    <small>
-	      <b>(mm{{ address.location.lat }} , {{ address.location.lng }})<b/>
+	      <b>mm{{ address.location.lat }} , {{ address.location.lng }})<b/>
 	    </small>
 	</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
