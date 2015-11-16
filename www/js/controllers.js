@@ -3,21 +3,19 @@ angular.module('starter.controllers', [])
 
 .controller('ShelterCtrl', function($scope,$http) {
     $scope.addresses = [];
-    $scope.page_title="Regiões em emergência"
-    $scope.page_descrition="selecione o Estado"
+    $scope.page_title="Estados em emergência"
+    $scope.page_description="selecione o Estado"
     var address; 
 
     $http
-	.get('http://sosserver.us/shelters',{ cache: false })
+	.get('http://danielcorbe.pythonanywhere.com/shelters',{ cache: false })
 	.then(
 	    function(resp) {
 		var status, res =  resp.data;
 		var response;
-		for (var i in res){
-		    address = {"place_id":0,"address":"","location":{"lat":0,lng:0}}
-		    response = res[i];
-		    address = response		    
-		    $scope.addresses.push(address);
+		for (var i in res){		   
+		    response = res[i];		    
+		    $scope.addresses.push(response);
 		}	    
 	    }, 
 	    function(err) {
@@ -28,12 +26,15 @@ angular.module('starter.controllers', [])
     
 })
 
-.controller('ShelterListCtrl', function($scope,$http) {    
+.controller('ShelterListCtrl', function($scope,$http,$ionicLoading, $stateParams) {    
     $scope.addresses = [];
+    $scope.page_title="Listagem de abrigos"
+    $scope.page_description="selecione o Estado"
+
     var address; 
 
     $http
-	.get('http://sosserver.us/sheltersList',{ cache: false })
+	.get('http://danielcorbe.pythonanywhere.com/sheltersList/'+$stateParams.countryShortName,{ cache: false })
 	.then(
 	    function(resp) {
 		var status, res =  resp.data;
@@ -44,7 +45,7 @@ angular.module('starter.controllers', [])
 		    address.address  = response.formatted_address;
 		    address.location = response.geometry.location; 
 		    address.place_id = response.place_id; 
-		    address.abrigo=response.abrigo;
+		    address.shelter=response.abrigo;
 		    $scope.addresses.push(address);
 		}	    
 	    }, 
@@ -60,7 +61,7 @@ angular.module('starter.controllers', [])
     $scope.addresses = [];
     $scope.map;
     var address = {"place_id":0,"address":"","location":{"lat":0,lng:0}}
-    $http.get('http://sosserver.us/shelter/'+$stateParams.placeId+"/")
+    $http.get('http://danielcorbe.pythonanywhere.com/shelterDetail/'+$stateParams.placeId+"/")
 	.then(function(resp) {
 	    
 	var status, res =  resp.data;

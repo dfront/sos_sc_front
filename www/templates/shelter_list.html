@@ -1,13 +1,11 @@
 <ion-view>
   <ion-content>
+    <h3>{{ page_title }}</h3>
     <ion-list>
-      <ion-item>
-	<h2>{{ page_title }}</h2>
-	<p>
-	  {{ address.locality.long_name }} -  {{ address.country.short_name }}
-	</p>
-	<i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
+	<ion-item class="item-icon-rightitem-remove-animate" ng-repeat="address in addresses" type="item-text-wrap" href="#/tab/shelter/{{ address.place_id }}">
+	  <i class="icon ion-chevron-right icon-accessory"></i> 
+	  {{address.shelter }} <br /> {{ address.address }} <br/> <small><b>({{ address.location.lat }},{{ address.location.lng }})</b></small>
+	</ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

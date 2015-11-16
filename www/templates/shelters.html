@@ -1,29 +1,13 @@
 <ion-view>
   <ion-content>
-    <ion-list>
-      <ion-item>
-	<h2><b>{{ page_title }}</b></h2>
-	<p>
+    <h3><b>{{ page_title }}</b></h3>
+    <p>
 	  {{ page_description }}
-	</p>
-	<div class="list card" ng-repeat="address in addresses">	
-	 
-	    <div class="" ng-repeat="address_component in address.address_components">
-
-
-	      <div ng-if="address_component.types.indexOf('administrative_area_level_1') === 1 ">
- 		<b>{{ address_component.long_name }}</b>
-	      </div>
-	    </div>
-	    
-	      
-	</div>
-	    
-
- -  {{ address.country.short_name }}
-	  </p>
-	</div>
+    </p>
+    <ion-list>
+      <ion-item class="item-icon-rightitem-remove-animate" ng-repeat="address in addresses" type="item-text-wrap" href="#/tab/shelters/list/{{ address.short_name }}">
 	<i class="icon ion-chevron-right icon-accessory"></i>
+ 	  {{ address.long_name }}
       </ion-item>
     </ion-list>
   </ion-content>
